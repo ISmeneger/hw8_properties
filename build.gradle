@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'Ilya_S'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.30.0")
+    // https://mvnrepository.com/artifact/org.aeonbits.owner/owner
+    implementation("org.aeonbits.owner:owner:1.0.12")
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
